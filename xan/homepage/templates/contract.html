@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .invoice {
+      width: 80%;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    .invoice h1 {
+      text-align: center;
+    }
+
+    .invoice-details {
+      margin-top: 20px;
+    }
+
+    .invoice-details p {
+      margin-bottom: 8px;
+    }
+
+    .invoice-details strong {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    /* Styling spans for displaying data */
+    .invoice-details span {
+      color: #333;
+    }
+  </style>
+<body>
+    {% for ct in ctr %}
+  <div class="invoice">
+    <h1>Invoice</h1>    
+    <div class="invoice-details">
+      <p><strong>ID:</strong> <span id="id">{{ct.ID}}</span></p>
+      <p><strong>Full Contract Code:</strong> <span id="full-contract-code">{{ct.Full_Contract_Code}}</span></p>
+      <p><strong>Customer Name:</strong> <span id="customer-name">{{ct.Customer_Name}}</span></p>
+      <p><strong>Year of Birth:</strong> <span id="year-of-birth">{{ct.Year_Of_Birth}}</span></p>
+      <p><strong>SSN:</strong> <span id="ssn">{{ct.SSN}}</span></p>
+      <p><strong>Customer Address:</strong> <span id="customer-address">{{ct.Customer_Address}}</span></p>
+      <p><strong>Mobile:</strong> <span id="mobile">{{ct.Mobile}}</span></p>
+      <p><strong>Property ID:</strong> <span id="property-id">{{ct.Property_ID}}</span></p>
+      <p><strong>Date of Contract:</strong> <span id="date-of-contract">{{ct.Date_Of_Contract}}</span></p>
+      <p><strong>Price:</strong> <span id="price">${{ct.Price}}</span></p>
+      <p><strong>Deposit:</strong> <span id="deposit">${{ct.Deposit}}</span></p>
+      <p><strong>Remain:</strong> <span id="remain">${{ct.Remain}}</span></p>
+      <p><strong>Status:</strong> <span id="status">{{ct.Status}}</span></p>
+    </div>    
+  </div>
+  {% endfor %}
+</body>
+</html>

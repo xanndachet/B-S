@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bat Dong San PPC</title>
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <link rel="stylesheet" href="{% static "css/xan.css" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="base_template">
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-red navbar-dark">
+          <div class="wrapper">          
+          </div>
+          <div class="container-fluid all-show">
+            <a class="navbar-brand" href="/">Bat Dong San PPC <i class="fa fa-fish"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+               
+               
+                <li class="nav-item">
+                  <input type="text" class="input-search" placeholder="Search">
+                </li>
+              </ul>
+  
+              <div id="buy-me" class="d-flex flex-column sim">
+                <a id="buy-me-text" href="#"><i class="fas fa-coffee"></i> NineTeam</a>
+                <small class="footer-sub-text">Đừng Sửa Hãy Làm lại <i class="fas fa-heart"></i></small>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+      <div id="nav-bar">
+        <input id="nav-toggle" type="checkbox"/>
+        <div id="nav-header"><a id="nav-title" target="_blank"><i class="fa fa-bars"></i> Menu</a>
+          <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+          <hr/>
+        </div>
+        <div id="nav-content">
+          
+          <hr/>
+          <div class="nav-button"><i class="fas fa-sign-out-alt"></i><span><a href="#">Sign Out</a></span></div>
+          <div id="nav-content-highlight"></div>
+        </div>
+        <input id="nav-footer-toggle" type="checkbox"/>
+        <div id="nav-footer">
+          <div id="nav-footer-heading">
+            <div id="nav-footer-avatar"><img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547"/></div>
+            <div id="nav-footer-titlebox">
+              <a id="nav-footer-title" href="#" target="_blank">
+                <p>Hxan <span id="badge">Admin</span></p>
+              </a>
+              <span id="nav-footer-subtitle">Hxan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  
+
+<div class="blog-home">
+    
+        <div class="create-posts">
+            <div class="create-posts-items-container">
+                <div class="create-posts-form">
+                   
+                        <a href="/admin" class="create-posts-button-form">
+                            <i class="fas fa-plus"></i>
+                            Create New Article
+                        </a>
+                    
+                        
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    <div class="list-article">
+        <div class="list-article-container">
+            <div href="#" class="list-article-title-container">
+                <p class="list-article-title-text">Account</p>
+            </div>
+            <div class="list-article-items-container">
+              <style>
+                body {
+                  font-family: Arial, sans-serif;
+                  margin: 0;
+                  padding: 0;
+                }
+
+                span {
+                  color: red;
+                }
+            
+                .invoice {
+                  width: 80%;
+                  margin: 20px auto;
+                  border: 1px solid #ccc;
+                  padding: 20px;
+                }
+            
+                .invoice h1 {
+                  text-align: center;
+                }
+            
+                .invoice-details {
+                  margin-top: 20px;
+                }
+            
+                .invoice-details p {
+                  margin-bottom: 8px;
+                }
+            
+                .invoice-details strong {
+                  font-weight: bold;
+                  margin-right: 5px;
+                }
+            
+                /* Styling spans for displaying data */
+                .invoice-details span {
+                  color: red;
+                }
+              </style>
+            <body>
+                {% for ct in data %}
+              <div class="invoice">
+                <h1>Invoice</h1>    
+                <div class="invoice-details">
+                  <h2>Contract</h2>
+                  <p><strong>ID:</strong> <span id="id">{{ct.id}}</span></p>
+                  <p><strong>Full Contract Code:</strong> <span id="full-contract-code">{{ct.full_contract_code}}</span></p>
+                  <p><strong>Customer Name:</strong> <span id="customer-name">{{ct.customer_name}}</span></p>
+                  <p><strong>Year of Birth:</strong> <span id="year-of-birth">{{ct.year_of_birth}}</span></p>
+                  <p><strong>SSN:</strong> <span id="ssn">{{ct.ssn}}</span></p>
+                  <p><strong>Customer Address:</strong> <span id="customer-address">{{ct.customer_address}}</span></p>
+                  <p><strong>Mobile:</strong> <span id="mobile">{{ct.mobile}}</span></p>
+                  <p><strong>Property ID:</strong> <span id="property-id">{{ct.property_id}}</span></p>
+                  <p><strong>Date of Contract:</strong> <span id="date-of-contract">{{ct.date_of_contract}}</span></p>
+                  <p><strong>Price:</strong> <span id="price">${{ct.price}}</span></p>
+                  <p><strong>Deposit:</strong> <span id="deposit">${{ct.deposit}}</span></p>
+                  <p><strong>Remain:</strong> <span id="remain">${{ct.remain}}</span></p>
+                  <p><strong>Status:</strong> <span class="status">{{ct.status}}</span></p>
+                  <hr>
+                  <br>                  
+                </div>
+                <div>
+                  <h2>Property</h2>
+                  <p><strong>ID: </strong><span>{{ct.id}}</span></p>
+                  <p><strong>Property Code: </strong><span>{{ct.property_code}}</span></p>
+                  <p><strong>Property Name: </strong><span>{{ct.property_name}}</span></p>
+                  <p><strong>Property Type ID: </strong><span>{{ct.property_type_id}}</span></p>
+                  <p><strong>Description: </strong><span>{{ct.description}}</span></p>
+                  <p><strong>District ID: </strong><span>{{ct.district_id}}</span></p>
+                  <p><strong>Mobile: </strong><span>{{ct.mobile}}</span></p>
+                  <p><strong>Property ID: </strong><span>{{ct.property_id}}</span></p>
+                  <p><strong>Address: </strong><span>{{ct.address}}</span></p>
+                  <p><strong>Area: </strong><span>{{ct.area}}</span></p>
+                  <p><strong>Bedroom: </strong><span>{{ct.bedroom}}</span></p>
+                  <p><strong>Bathroom: </strong><span>{{ct.bathroom}}</span></p>
+                  <p><strong>Price: </strong><span>{{ct.price}}</span></p>
+                  <p><strong>Installment Rate: </strong><span>{{ct.installment_rate}}</span></p>
+                  <p>Avatar: <br> <img class="avt" src="{{ct.avatar}}"></p>
+                  <p>Album: <br><img class="album" src="{{ct.album}}"></p>
+                  <p><strong>Property Status ID:</strong><span>{{ct.property_status_id}}</span></p>
+              </div>
+                {% endfor %}
+            </div>
+            <div class="transfer-page">
+                <a href="#" class="previous">
+                    <i id="pre-icon" class="fas fa-chevron-left"></i>
+                </a>
+                <a href="#" class="next">
+                    <i id="next-icon" class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var statusSpans = document.querySelectorAll('.status');
+
+    statusSpans.forEach(function(span) {
+      var statusValue = span.textContent.trim();
+
+      if (statusValue === 'True') {
+        span.textContent = 'Activate';
+      } else if (statusValue === 'False') {
+        span.textContent = 'Non Activate';
+      }
+    });
+  });
+</script>
+
+      <footer class="w-100 py-4 flex-shrink-0">
+          <div class="container py-4">
+              <div class="row gy-4 gx-5">
+                  <div class="col-lg-4 col-md-6">
+                      <h5 class="h1 text-white">Bat Dong San PPC</h5>
+                      <p class="small text-muted"></p>
+                      <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">NineTeam.net</a></p>
+                  </div>
+                 
+                  <div class="col-lg-4 col-md-6">
+                      <h5 class="text-white mb-3">Newsletter</h5>
+                      <p class="small text-muted">Subscribe to receive our latest news</p>
+                      <form action="#">
+                          <div class="input-group mb-3">
+                              <input class="form-control" type="text" placeholder="Your Email" aria-label="Your Email" aria-describedby="button-addon2">
+                              <button class="btn btn-primary" id="button-addon2" type="button"><i class="fas fa-paper-plane"></i></button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </footer>
+            
+    </div>
+
+    <script>
+      function enableDarkMode() {
+          var element = document.body;
+          element.classList.toggle("dark-mode");
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
+    <script src="js/base.js}"></script>
+    <script src="js/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  
+  </body>
+</html>
